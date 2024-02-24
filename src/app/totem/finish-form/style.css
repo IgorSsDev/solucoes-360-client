@@ -1,0 +1,27 @@
+.ultima {
+  height: 100vh;
+  width: 100%;
+  background: #171821;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ultima h1 {
+    font-size: 45px;
+    color: #dedede;
+}
+.content{
+    animation: animator 1.6s;
+}
+@keyframes animator {
+    0%{
+        transform: translateX(-115px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

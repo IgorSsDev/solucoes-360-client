@@ -1,0 +1,55 @@
+.graph-content {
+  width: 82%;
+  position: absolute;
+  right: 0;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding-bottom: 100px;
+  background: #000000;
+  border-left: 1px solid gray;
+}
+.graph-content canvas {
+  width: 50%;
+  height: 50vh;
+}
+.select-graph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.select-graph button {
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: 1px solid #d5d5d5;
+    background: none;
+    color: #ae00ff;
+    outline: none;
+    cursor: pointer;
+    margin-inline: 8px;
+}
+.select-graph button:nth-child(2){
+    color: green;
+}
+.select-graph button:focus{
+    background: #222222;
+}
+.select-graph h1 {
+  color: #d6d6d6;
+}
+.select{
+  display: flex;
+  flex-direction: row;
+}
+@media (max-width: 1113px) {
+  .graph-content {
+    padding-top: 70px;
+    width: 100%;
+  }
+}

@@ -1,0 +1,1 @@
+export const BASEAPI = "https://servidor-solucoes360.onrender.com"

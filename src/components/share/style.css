@@ -1,0 +1,101 @@
+.content-login {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  flex-direction: row;
+  gap: 10px;
+  
+}
+
+.modal-center {
+  color: white;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px;
+  border-radius: 10px;
+  background: #191919;
+}
+.top-content h1 {
+  max-width: 500px;
+  font-size: 50px;
+}
+.top-content strong { 
+  padding: 3px;
+  background: #a9dfd8;
+  color: #191919;
+}
+.modal-center .title h1 {
+  font-size: 20px;
+}
+.modal-center h2 {
+  margin-top: 5px;
+  font-weight: 400;
+  font-size: 15px;
+}
+.content-login form {
+  width: 500px;
+}
+.content-login form input {
+  border-radius: 5px;
+  outline: none;
+  color: white;
+  border: none;
+  height: 50px;
+  padding-left: 10px;
+  background: #000;
+  width: 100%;
+}
+.content-login form input:focus {
+  border: 1px solid #dedede;
+}
+.content-login form button {
+  cursor: pointer;
+  padding: 15px 0px;
+  width: 100%;
+  border: none;
+  outline: none;
+  margin-top: 15px;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  background: #a9dfd8;
+}
+.content-login form a {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+}
+@media (max-width: 500px) {
+  .content-login{
+    height: 100vh;
+  }
+  .modal-center{
+    width: 90%;
+  }
+  .modal-center .title {
+    width: 100%;
+  }
+  .modal-center h1{
+    font-size: 25px;
+   max-width: 100%;
+  }
+  .modal-center h2{
+    font-size: 15px;
+  }
+  .modal-center form {
+    width: 100%;
+  }
+}
