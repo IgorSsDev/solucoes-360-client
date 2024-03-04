@@ -69,7 +69,7 @@ export default function Question({ next }: any) {
           setCurrentQuestionIndex(currentQuestionIndex + 1);
           setCardClicked(null);
         } else {
-          router.push("/totem/questions/avaliable");
+          router.push("/totem/finish-form");
         }
       } else {
       }

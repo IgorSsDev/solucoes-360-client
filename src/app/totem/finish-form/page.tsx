@@ -15,7 +15,8 @@ export default function Finish() {
     <div className="ultima">
       <div className="content">
         <img src={infoUser?.dataClient?.workLogo} alt="" style={{width: "79%"}} />
-        <h1>Obrigado por nos escolher, até logo 👋</h1>
+        <h1>{infoUser?.dataClient?.nameWork} Agradece sua agradece a sua
+colaboração. </h1>
       </div>
     </div>
   );

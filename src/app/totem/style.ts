@@ -48,6 +48,7 @@ height: 100vh;
   gap: 50px;
 
   .textTopics {
+    font-weight: bold;
     font-size: 45px;
     color: #dedede;
 }
