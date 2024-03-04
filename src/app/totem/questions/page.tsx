@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
@@ -7,14 +7,14 @@ import Login from "@/components/login/login";
 import { QuestionsContainer } from "../style";
 
 export default function Question({ next }: any) {
-
-    const [questions, setQuestions] = useState<any>([]);
-    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-    const [ratings, setRatings] = useState(new Array(10).fill(null));
-    const [cardClicked, setCardClicked] = useState(null);
-    const router = useRouter();
-    const { user, infoUser }: any = useContext(AuthenticationContext)
-    const name: any = typeof window !== 'undefined' ? localStorage.getItem("@work") : null;
+  const [questions, setQuestions] = useState<any>([]);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [ratings, setRatings] = useState(new Array(10).fill(null));
+  const [cardClicked, setCardClicked] = useState(null);
+  const router = useRouter();
+  const { user, infoUser }: any = useContext(AuthenticationContext);
+  const name: any =
+    typeof window !== "undefined" ? localStorage.getItem("@work") : null;
 
   // pegar o backend do dashboard, passar para ele um resultado da minha imagem de usuario;
 
@@ -29,9 +29,7 @@ export default function Question({ next }: any) {
         );
         setQuestions(response.data.company);
         setRatings(new Array(response.data.company.length).fill(null));
-
-      } catch (error) {
-      }
+      } catch (error) {}
     }
     fetchDataApi();
   }, []);
@@ -45,17 +43,16 @@ export default function Question({ next }: any) {
 
   useEffect(() => {
     const enterFullscreen = () => {
-      document.documentElement.requestFullscreen()
+      document.documentElement.requestFullscreen();
     };
 
-    document.addEventListener('click', enterFullscreen);
+    document.addEventListener("click", enterFullscreen);
 
     return () => {
-      document.removeEventListener('click', enterFullscreen);
+      document.removeEventListener("click", enterFullscreen);
     };
   }, []);
   const handleNextQuestion = async () => {
-
     try {
       const updateResponse = await axios.post(
         "https://servidor-solucoes360.onrender.com/update",
@@ -72,52 +69,55 @@ export default function Question({ next }: any) {
           setCurrentQuestionIndex(currentQuestionIndex + 1);
           setCardClicked(null);
         } else {
-          router.push("/totem/questions/avaliable")
+          router.push("/totem/questions/avaliable");
         }
       } else {
       }
-    } catch (error) {
-    }
+    } catch (error) {}
   };
 
   return (
     <>
-
       {user ? (
-        <QuestionsContainer>
-          <img src={infoUser?.dataClient?.workLogo} alt="" style={{width: "79%"}} />
-          <div className="textTopics">{questions[currentQuestionIndex]?.pergunta}</div>
-          <div className="topics" >
-            {[...Array(10)].map((_, index) => (
-              <div className="card"
-                onClick={() => handleRating(index)}
-                key={index + 1}
-                style={{
-                  cursor: "pointer",
-                  backgroundColor: cardClicked === index ? "blue" : `rgb(${255 - index * 25.5}, ${index * 25.5}, 0)`,
-                }}
-              >
-                <h1 style={{ cursor: "pointer" }} >{index + 1}</h1>
-              </div>
-
-            ))}
-
-          </div>
-          {ratings[currentQuestionIndex] !== null && (
-            <button id="confirm" onClick={handleNextQuestion} >
-              Confirmar
-            </button>
-
-          )}
-        </QuestionsContainer>
-
+        <div>
+          <QuestionsContainer>
+            <img
+              src={infoUser?.dataClient?.workLogo}
+              alt=""
+              style={{ width: "56%" }}
+            />
+            <h1>Qual nota você classificaria:</h1>
+            <div className="textTopics">
+              {questions[currentQuestionIndex]?.pergunta}
+            </div>
+            <div className="topics">
+              {[...Array(10)].map((_, index) => (
+                <div
+                  className="card"
+                  onClick={() => handleRating(index)}
+                  key={index + 1}
+                  style={{
+                    cursor: "pointer",
+                    backgroundColor:
+                      cardClicked === index
+                        ? "blue"
+                        : `rgb(${255 - index * 25.5}, ${index * 25.5}, 0)`,
+                  }}
+                >
+                  <h1 style={{ cursor: "pointer" }}>{index + 1}</h1>
+                </div>
+              ))}
+            </div>
+            {ratings[currentQuestionIndex] !== null && (
+              <button id="confirm" onClick={handleNextQuestion}>
+                prosseguir
+              </button>
+            )}
+          </QuestionsContainer>
+        </div>
       ) : (
         <Login />
       )}
-
-
     </>
-
-
   );
 }

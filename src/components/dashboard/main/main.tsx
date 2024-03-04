@@ -31,7 +31,7 @@ export default function Main({ isData, setIsPage, infoUser, client, setClient }:
             <div className="card">
               <Image src={graficopng} alt="" width={30} />
               <h1>Total: {isData?.somaTotal + isData?.notclient?.some || isData.somaTotal}</h1>
-              <p>Soma dos relatórios</p>20AEF3
+              <p>Soma dos relatórios</p>
               <h3 style={{ color: "#FEB95A" }}>feedback dos clientes</h3>
             </div>
             <div className="card">

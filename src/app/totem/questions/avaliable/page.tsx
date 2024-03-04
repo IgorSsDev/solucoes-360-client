@@ -43,7 +43,6 @@ export default function Avaliable() {
     document.addEventListener('click', enterFullscreen);
 
     return () => {
-      // Remover o ouvinte de evento quando o componente for desmontado
       document.removeEventListener('click', enterFullscreen);
     };
   }, []);

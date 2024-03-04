@@ -24,7 +24,7 @@ export default function Totem() {
         <>
           <ContainerTodoClient>
             <div className="items">
-              <h1>Bem vindo, desejar nos ajudar com seu feedback?</h1>
+              <h1>Deseja nos ajudar com seu feedback?</h1>
             </div>
             <button onClick={() => router.push("/totem/questionUser")}>Começar feedback</button>
           </ContainerTodoClient>

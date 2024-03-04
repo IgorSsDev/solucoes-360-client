@@ -45,16 +45,16 @@ height: 100vh;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  gap: 100px;
+  gap: 50px;
 
   .textTopics {
     font-size: 45px;
     color: #dedede;
 }
 h1{
+    font-size: 40px;
     color: white;
     max-width: 600px;
-    font-size: 40px;
 }
 .topics{
     width: 100%;
